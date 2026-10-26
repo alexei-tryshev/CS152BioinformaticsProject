@@ -54,7 +54,7 @@ input_tensor = formatted_sequence.unsqueeze(0).unsqueeze(-1)
 # -1 = representing putting the dimension at the very end of the sequence
 
 model_prediction = model.predict(input_tensor)[0]
-# this = basically Viberti algorithm
+# this = posterior decoding (similar to viberti)
 
 probability_prediction = model.log_probability(input_tensor)[0]
 # this = ur model's probability (tells you how likely that that it's the correct DNA sequence)
